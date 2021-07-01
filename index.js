@@ -28,7 +28,6 @@ io.on('connection', (socket) => {
 
     db.collection('questions').insertOne(data, (err, result) => {
       if (err) throw err;
-      console.log(result);
       io.emit('response', 'Veri Eklendi, id: ' + result.ops[0]._id);
     });
   });
